@@ -56,14 +56,14 @@ set apps_name=^
 for %%a in (%apps_id%) do (
     echo.
     echo Installing: %%a
-    winget install -e --id %%a --accept-package-agreements --accept-source-agreements --silent
+    winget install -e --id %%a --accept-package-agreements --accept-source-agreements --silent --ignore-security-hash
 )
 
 :: Loop through the app names
 for %%a in (%apps_name%) do (
     echo.
     echo Installing: %%a
-    winget install %%a --accept-package-agreements --accept-source-agreements --silent
+    winget install %%a --accept-package-agreements --accept-source-agreements --silent --ignore-security-hash
 )
 
 echo ---------------------------------------
