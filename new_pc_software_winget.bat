@@ -11,6 +11,8 @@ if %ERRORLEVEL% NEQ 0 (
     exit /b
 )
 
+winget upgrade --all --accept-package-agreements --accept-source-agreements
+
 echo Starting Winget Installation Script...
 echo ---------------------------------------
 
@@ -31,14 +33,12 @@ set apps_id=^
  Google.GoogleDrive ^
  Microsoft.PowerToys ^
  Amazon.AWSCLI ^
- Microsoft.OneDrive ^
  Notion.Notion ^
  qBittorrent.qBittorrent ^
  RevoUninstaller.RevoUninstaller ^
  Wagnardsoft.DisplayDriverUninstaller ^
  voidtools.Everything ^
  ShareX.ShareX ^
- 9NKSQGP7F2NH ^
  Logitech.OptionsPlus ^
  Logitech.LogiBolt ^
  VideoLAN.VLC ^
@@ -56,14 +56,14 @@ set apps_name=^
 for %%a in (%apps_id%) do (
     echo.
     echo Installing: %%a
-    winget install -e --id %%a --accept-package-agreements --accept-source-agreements
+    winget install -e --id %%a --accept-package-agreements --accept-source-agreements --silent
 )
 
 :: Loop through the app names
 for %%a in (%apps_name%) do (
     echo.
     echo Installing: %%a
-    winget install %%a --accept-package-agreements --accept-source-agreements
+    winget install %%a --accept-package-agreements --accept-source-agreements --silent
 )
 
 echo ---------------------------------------
