@@ -47,6 +47,7 @@ set apps_id=^
  dotPDN.PaintDotNet ^
  CodeSector.TeraCopy ^
  Postman.Postman ^
+ CharlesMilette.TranslucentTB ^
  7zip.7zip
 
 set apps_name=^
@@ -68,4 +69,5 @@ for %%a in (%apps_name%) do (
 
 echo ---------------------------------------
 echo All tasks complete!
+
 pause
