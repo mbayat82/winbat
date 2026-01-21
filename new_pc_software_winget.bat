@@ -11,7 +11,7 @@ if %ERRORLEVEL% NEQ 0 (
     exit /b
 )
 
-winget upgrade --all --accept-package-agreements --accept-source-agreements
+winget upgrade --all --accept-package-agreements --accept-source-agreements --silent
 
 echo Starting Winget Installation Script...
 echo ---------------------------------------
@@ -57,17 +57,18 @@ set apps_name=^
 for %%a in (%apps_id%) do (
     echo.
     echo Installing: %%a
-    winget install -e --id %%a --accept-package-agreements --accept-source-agreements --silent --ignore-security-hash
+    winget install -e --id %%a --accept-package-agreements --accept-source-agreements --silent
 )
 
 :: Loop through the app names
 for %%a in (%apps_name%) do (
     echo.
     echo Installing: %%a
-    winget install %%a --accept-package-agreements --accept-source-agreements --silent --ignore-security-hash
+    winget install %%a --accept-package-agreements --accept-source-agreements --silent
 )
 
 echo ---------------------------------------
 echo All tasks complete!
 
 pause
+
