@@ -48,6 +48,7 @@ set apps_id=^
  CodeSector.TeraCopy ^
  Postman.Postman ^
  CharlesMilette.TranslucentTB ^
+ zoxide ^
  7zip.7zip
 
 set apps_name=^
@@ -67,8 +68,12 @@ for %%a in (%apps_name%) do (
     winget install %%a --accept-package-agreements --accept-source-agreements --silent
 )
 
+:: zoxide init
+zoxide init --cmd cd powershell >> $PROFILE
+
 echo ---------------------------------------
 echo All tasks complete!
 
 pause
+
 
